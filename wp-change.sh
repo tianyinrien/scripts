@@ -1,3 +1,2 @@
 #!/bin/bash
-
-feh --recursive --randomize --bg-fill ~/Pictures
+feh --randomize --bg-fill ~/Pictures

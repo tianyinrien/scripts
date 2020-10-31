@@ -93,13 +93,13 @@ print_wifi(){
    ws=$(iw dev wlp3s0 info | grep ssid | awk '{print $1}')
    wn=$(iw dev wlp3s0 info | grep ssid | awk '{print $2}')
    if [[ $ws == ssid ]]; then
-      echo " $wn $(print_netspeed)"
+      echo "$wn $(print_netspeed)"
    else
       echo ""
       
    fi
 }
-xsetroot -name "$(print_wifi) $(print_disk) $(print_mem) $(print_cpuinfo) $(print_bat) $(print_date) "
+xsetroot -name " $(print_wifi) $(print_disk) $(print_mem) $(print_cpuinfo) $(print_bat) $(print_date) "
 
 
 # Update old values to perform new calculations
