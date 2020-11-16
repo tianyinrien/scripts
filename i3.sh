@@ -100,7 +100,7 @@ print_wifi(){
       
    fi
 }
-xsetroot -name " $(print_wifi) $(print_disk) $(print_mem) $(print_cpuinfo) $(print_bat) $(print_date) "
+echo -e " $(print_wifi) $(print_disk) $(print_mem) $(print_cpuinfo) $(print_bat) $(print_date) "
 
 
 # Update old values to perform new calculations

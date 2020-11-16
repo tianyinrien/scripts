@@ -39,7 +39,7 @@ print_volume() {
 	volume="$(amixer -c 1 get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')"
 	if test "$volume" -gt 0
 	then
-		echo -e "  ${volume}"
+		echo -e "${volume}"
 	else
 		echo -e "M"
 	fi
@@ -47,31 +47,30 @@ print_volume() {
 
 print_disk() {
   disk=$(lsblk -f | grep sda4 | awk '{print $5}')
-  echo -e " $disk"
+  echo -e "$disk"
 }
 
 print_mem(){
    memfree=$(grep -m1 'MemAvailable:' /proc/meminfo | awk '{print $2}')
    mem=$(echo "scale=2; $memfree/1024/1024" | bc)
-   echo " ${mem}G"
-
+   echo "${mem}G"
 }
 
 print_bat(){
   precent=$(acpi -b | grep 'Battery\ 0' | awk '{print $4}' | grep -Eo "[0-9]+")
-	echo -e " ${precent}%"
+	echo -e "${precent}%"
 }
 
 print_date(){
    date=$(date '+%m-%d %a %H:%M')
-   echo " $date"
+   echo "$date"
 }
 
 print_cpuinfo(){
    tep=$(sensors | grep Package | awk '{print $4}')
    hzm=$(lscpu | grep CPU\ MHz | awk '{print $3}')
    hzg=$(echo "scale=2; $hzm/1024" | bc)
-   echo -e " ${hzg}GHz $tep"
+   echo -e "${hzg}GHz $tep"
 }
 
 get_bytes
@@ -83,24 +82,24 @@ print_netspeed(){
    if [[ $vel_recv == 0KB/s && $vel_trans == 0KB/s ]]; then
       echo ""
    elif [[ $vel_trans == 0KB/s ]]; then
-      echo "$vel_recv"
+      echo "$vel_recv"
    elif [[ $vel_recv == 0KB/s ]]; then
-      echo "$vel_trans"
+      echo "$vel_trans"
    else 
-      echo -e "$vel_recv $vel_trans"
+      echo -e "$vel_recv $vel_trans"
    fi
 }
 print_wifi(){
    ws=$(iw dev wlp3s0 info | grep ssid | awk '{print $1}')
    wn=$(iw dev wlp3s0 info | grep ssid | awk '{print $2}')
    if [[ $ws == ssid ]]; then
-      echo "直 $(print_netspeed)"
+      echo "$wn $(print_netspeed)"
    else
-      echo "睊 "
+      echo ""
       
    fi
 }
-xsetroot -name " $(print_wifi) $(print_disk) $(print_mem) $(print_cpuinfo) $(print_bat) $(print_date) "
+echo -e " | $(print_mem) | $(print_cpuinfo) | $(print_bat) | $(print_date) | "
 
 
 # Update old values to perform new calculations

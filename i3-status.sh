@@ -2,6 +2,6 @@
 
 while true
 do
-	bash ~/scripts/dwm-status-refresh.sh
+	bash ~/scripts/i3.sh
 	sleep 1 
 done
