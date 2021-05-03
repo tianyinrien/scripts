@@ -2,13 +2,11 @@
 
 /bin/bash ~/scripts/dwm-status.sh &
 #/bin/bash ~/scripts/wp-autochange.sh &
-#picom -b
-#picom -o 0.01 -i 0.01 --detect-rounded-corners --vsync --blur-background-fixed -f -D 3 -c -b
-#feh --bg-scale ~/Pictures/457319.jpg
+feh --bg-scale ~/pictures/linux.png 
+picom -o 0.02 -i 0.01 -I 0.01 &       
+#v2ray -c ~/config.json &
+
+#fcitx5 &
 clipmenud &
-
-
-
-
 
 

@@ -46,7 +46,7 @@ print_volume() {
 }
 
 print_disk() {
-  disk=$(lsblk -f | grep sda4 | awk '{print $5}')
+  disk=$(lsblk -f | grep nvme0n1p6 | awk '{print $5}')
   echo -e " $disk"
 }
 
@@ -68,7 +68,7 @@ print_date(){
 }
 
 print_cpuinfo(){
-   tep=$(sensors | grep Package | awk '{print $4}')
+   tep=$(sensors | grep Tctl: | awk '{print $2}')
    hzm=$(lscpu | grep CPU\ MHz | awk '{print $3}')
    hzg=$(echo "scale=2; $hzm/1024" | bc)
    echo -e " ${hzg}GHz $tep"
@@ -91,16 +91,16 @@ print_netspeed(){
    fi
 }
 print_wifi(){
-   ws=$(iw dev wlp3s0 info | grep ssid | awk '{print $1}')
+   ws=$(ip route get 8.8.8.8 2>/dev/null| awk '{print $7}')
    wn=$(iw dev wlp3s0 info | grep ssid | awk '{print $2}')
-   if [[ $ws == ssid ]]; then
+   if [[ ! z == $ws ]]; then
       echo "直 $(print_netspeed)"
    else
       echo "睊 "
       
    fi
 }
-echo -e " $(print_wifi) $(print_disk) $(print_mem) $(print_cpuinfo) $(print_bat) $(print_date) "
+echo -e " $(print_wifi) $(print_disk) $(print_mem) $(print_cpuinfo) $(print_date) "
 
 
 # Update old values to perform new calculations
