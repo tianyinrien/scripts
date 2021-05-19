@@ -43,14 +43,14 @@ print_date(){
 }
 
 print_cpuinfo(){
-   tep0=$(sensors | grep Core\ 0: | awk '{print $3}')
-   tep1=$(sensors | grep Core\ 1: | awk '{print $3}')
+   tep0=$(sensors | grep Core\ 0: | awk '{print $3}' | grep -Eo "[0-9.]+")
+   tep1=$(sensors | grep Core\ 1: | awk '{print $3}' | grep -Eo "[0-9.]+")
    hzm=$(lscpu | grep CPU\ MHz | awk '{print $3}')
    hzg=$(echo "scale=2; $hzm/1024" | bc | awk '{printf "%.2f",$0}')
-   #   echo -e " ${hzg}GHz $(print_mem) $tep0"
-   echo -e "${hzg}GHz  $tep0"
+   tep=$(echo "scale=1; ($tep0+$tep1)/2" | bc)
+    co=$(sensors | grep Core\ 1: | awk '{print $3}' | grep -Eo "[^+0-9.]+")
+   echo -e "${hzg}GHz +$tep$co"
 }
-
 
 xsetroot -name "  $(print_disk)  $(print_cpuinfo)  $(print_mem)  $(print_bat)  $(print_date) "
 
