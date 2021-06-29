@@ -6,15 +6,21 @@
 # Within that line, the first and ninth numbers after ':' are respectively the received and transmited bytes.
 
 print_volume() {
-	volume="$(amixer -c 1 get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')"
-	if test "$volume" -gt 0
-	then
-		echo -e "  ${volume}"
-	else
-		echo -e "M"
-	fi
+    volume="$(amixer -c 1 get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')"
+    status="$(amixer -c 1 get Master | tail -n1 | awk '{print $6}')"
+      if [ "$volume" -gt 0 ] && [ "$status" == "[on]" ]
+      then
+         echo -e "${volume}%"
+      else
+         echo -e "M"
+      fi
 }
 
+print_backlight(){
+    light="$(xbacklight | grep -Eo "^..")"
+    
+    echo "${light}"
+}
 print_disk() {
   disk=$(lsblk -f | grep sda4 | awk '{print $5}')
   #  echo -e " $disk"
@@ -52,6 +58,6 @@ print_cpuinfo(){
    echo -e "${hzg}GHz +$tep$co"
 }
 
-xsetroot -name "  $(print_disk)  $(print_cpuinfo)  $(print_mem)  $(print_bat)  $(print_date) "
+xsetroot -name "  $(print_backlight)  $(print_volume)  $(print_disk)  $(print_cpuinfo)  $(print_mem)  $(print_bat)  $(print_date) "
 
 exit 0

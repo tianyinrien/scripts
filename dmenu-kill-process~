@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+# dmenu theming
+lines="-l 26"
+colors1="-nb #333333 -nf #999999 -sb #999999 -sf #222222" 
+colors="-nb #2C323E -nf #9899a0 -sb #BF616A -sf #2C323E"
+
+selected="$(ps ax | \
+            dmenu -i -p "Type to Kill:" \
+            $lines $colors -fn "Agave Nerd Font:size=15" | \
+            awk '{print $1" "$4}')"; 
+
+if [[ ! -z $selected ]]; then
+
+    answer="$(echo -e "Yes\nNo" | \
+            dmenu -i -p "$selected will be killed, are you sure?" \
+            $lines $colors -fn "Agave Nerd Font:size=18")"
+
+    if [[ $answer == "Yes" ]]; then
+        selpid="$(awk '{print $1}' <<< $selected)"; 
+        kill -9 $selpid 
+    fi
+fi
+
+exit 0

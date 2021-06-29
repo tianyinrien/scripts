@@ -7,7 +7,7 @@ you need already install a minimal linux system and install likely base-devel co
 
 pacman -S xorg-server xorg-apps xorg-xinit fzf neofetch dhcpcd 
 
-if (lspci | grep "wireless card")
+if [ lspci | grep "wireless card"]
 then pacman -s iw wpa_supplicant
 else sleep 1
 
@@ -28,5 +28,14 @@ else sleep 1
      cp ~/scripts/.*  ~/
 
 
-
+if statement:
+     if [ variable test ]
+     then
+	 commands
+     else
+	 other commands
+     fi
+the variable test are following case:
+          
+     
      
