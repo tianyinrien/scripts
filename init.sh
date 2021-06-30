@@ -5,10 +5,10 @@ you need already install a minimal linux system and install likely base-devel co
 
 #install software by pacage manager:
 
-pacman -S xorg-server xorg-apps xorg-xinit fzf neofetch dhcpcd 
+pacman -S xorg-server xorg-apps xorg-xinit fzf neofetch dhcpcd zsh cpupower git 
 
 if [ lspci | grep "wireless card"]
-then pacman -s iw wpa_supplicant
+then pacman -s iw wpa_supplicant 
 else sleep 1
 
 
@@ -35,7 +35,16 @@ if statement:
      else
 	 other commands
      fi
-the variable test are following case:
-          
+
+
+case statement:
+    case variable in
+        case-1)
+              commands ;;
+        case-2)
+	      commands ;;
+        ......
+    esac
+
      
      

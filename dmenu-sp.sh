@@ -12,4 +12,6 @@ case "$cmd" in
 	sudo poweroff ;;
     reboot)
 	sudo reboot ;;
+    low-energy)
+        sudo cpupower frequency-set governor conservative ;;
 esac
