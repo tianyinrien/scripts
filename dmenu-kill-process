@@ -8,14 +8,14 @@ colors="-nb #deb887 -nf #000000 -sb #ffe4b5 -sf #303030"
 
 selected="$(ps ax | \
             dmenu -i -p "Type to Kill:" \
-            $lines $colors -fn "Agave Nerd Font:size=15" | \
+            $lines -fn "Agave Nerd Font:size=15" | \
             awk '{print $1" "$4}')"; 
 
 if [[ ! -z $selected ]]; then
 
     answer="$(echo -e "Yes\nNo" | \
             dmenu -i -p "$selected will be killed, are you sure?" \
-            $lines $colors -fn "Agave Nerd Font:size=18")"
+            $lines -fn "Agave Nerd Font:size=18")"
 
     if [[ $answer == "Yes" ]]; then
         selpid="$(awk '{print $1}' <<< $selected)"; 

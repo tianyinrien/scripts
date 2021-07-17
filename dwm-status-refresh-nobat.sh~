@@ -47,8 +47,8 @@ print_bat(){
     }
 
 print_date(){
-  date=$(date '+%m-%d %H:%M')
-#   date=$(date '+%H:%M')
+#  date=$(date '+%m-%d %H:%M')
+   date=$(date '+%H:%M')
 #    echo -e " $date"
    echo "$date"
 }
@@ -71,6 +71,6 @@ print_cpuinfo(){
    echo -e "${ou}GHz +$tep$co"
 }
 
-xsetroot -name "  $(print_backlight)  $(print_volume)  $(print_disk)  $(print_cpuinfo)  $(print_mem)  $(print_bat)  $(print_date) "
+xsetroot -name "  $(print_bat)  $(print_date) "
 
 exit 0

@@ -7,18 +7,12 @@ then
    pr=$(stest -flx /usr/bin/ /usr/local/bin | dmenu -l 19 -p Run: -fn "Agave Nerd Font:size=16")
 fi
 
-if [ -z "$pr" ] 
+if [ -n "$pr" ] 
 then
-    exit 0
-fi
-
-if [ $pr == "cp" ] || [ $pr == "mv" ]
-then
-    out=$(find ~/ -maxdepth 20 -type d | dmenu -i -p Out-Folder: -l 23 -fn "Agave Nerd Font:size=16")    
-    $pr $sel $out
- else
     $pr $sel
 fi
+
+
 
 # case $tp in
 #     tex)    emacs $sel ;;

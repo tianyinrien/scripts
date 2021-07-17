@@ -1,0 +1,17 @@
+#!/bin/bash
+
+cmd=$(echo -e "dark\norange\ngreen" | dmenu -i -p "Execute:" -l 20 -fn "Agave Nerd Font:size=16")
+
+if [ -z "$cmd" ]
+then
+    exit 0
+fi
+
+case "$cmd" in
+    dark)
+	 bash ~/scripts/dark.sh ;;
+    orange)
+	bash ~/scripts/orange.sh ;;
+    green)
+	bash ~/scripts/green.sh ;;
+esac

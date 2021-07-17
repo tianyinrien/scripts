@@ -1,2 +1,2 @@
 #!/bin/bash
-feh --randomize --bg-fill ~/ll
+feh --randomize --bg-fill ~/Pictures/

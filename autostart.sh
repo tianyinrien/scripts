@@ -2,8 +2,19 @@
 
 /bin/bash ~/scripts/dwm-status.sh &
 #/bin/bash ~/scripts/wp-autochange.sh &
-feh --bg-scale ~/ll/wp2.png 
-#picom -o 0.02 -i 0.01 -I 0.01 &       
+color=$(grep 'appearance' ~/src/dwm/config.h | awk '{print $2}')
+
+case "$color" in
+    appearance-dark)
+        feh --bg-scale ~/Pictures/black.jpg ;;
+    appearance-green)
+	feh --bg-scale ~/Pictures/green.jpg ;;
+    appearance-orange)
+        feh --bg-scale ~/Pictures/orange.jpg ;;
+esac
+
+
+#picom -o 0.9 -i 0.01 -I 0.01 &       
 #v2ray -c ~/config.json &
 xbacklight -set 10 &
 
