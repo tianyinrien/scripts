@@ -13,7 +13,7 @@
 #     appearance-orange)
 #         feh --bg-scale ~/Pictures/orange.jpg ;;
 # esac
-feh --bg-fill ~/wallpapers/black.jpg
+feh --bg-fill ~/wallpapers/4.jpg
 
 sudo cpupower frequency-set --governor conservative 
 
@@ -30,6 +30,5 @@ if [ $toggle == "[on]" ]
 then 
 amixer -c 1 sset Master toggle
 fi
-
 
 #/bin/bash ~/scripts/fcitx5.sh &
