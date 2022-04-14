@@ -10,7 +10,7 @@ fi
 
 web="qutebrowser"
 
-engine="$(echo -e "Google\nDuckDuckgo\narXiv\nWiki\nSci-Hub\nMath-Overflow\nStack-Overflow\nGithub\nNyaa\nBilibili\nBangumi\nUrl\nCNU" | dmenu -p "Which Engine?" -l 20 -i)"
+engine="$(echo -e "Google\nDuckDuckgo\narXiv\nWiki\nSci-Hub\nMath-Overflow\nGithub\nYoutube\nUrl\nCNU" | dmenu -p "Which Engine?" -l 20 -i)"
 
 exit_justify "$engine"
 
@@ -73,11 +73,11 @@ case "$engine" in
 	text="$(echo -e $txt | sed -r 's/[[:space:]]+/+/g' )"
 	$web https://github.com/search/?q=$text ;;
 
-    Stack-Overflow)
+    Youtube)
 	txt="$(echo -e " " | dmenu -p "What you want to know?" -i)"         		
         exit_justify "$txt"
 	text="$(echo -e $txt | sed -r 's/[[:space:]]+/+/g' )"
-        $web https://stackoverflow.com/search?q=$text ;;
+        $web https://youtube.com/search?q=$text ;;
 
     Math-Overflow)
 	txt="$(echo -e " " | dmenu -p "What you want to know?" -i)"         		
@@ -91,17 +91,6 @@ case "$engine" in
  	text="$(echo -e $txt | sed -r 's/[[:space:]]+/+/g' )"
 	$web https://nyaa.si/?f=0&c=0_0&q="$text" ;;
     
-    Bilibili)
-	txt="$(echo -e " " | dmenu -p "What you want to know?" -i)"         		
-        exit_justify "$txt"
- 	text="$(echo -e $txt | sed -r 's/[[:space:]]+/+/g' )"
-	$web https://search.bilibili.com/all?keyword=$text ;;
-
-    Bangumi)
-	time="$(echo -e " " | dmenu -p "Date:" -i)"
-	sort="$(echo -e "rank\ndate\ntitle" | dmenu -p "Sort:" -i -l 3)"
-	result="https://bangumi.tv/anime/browser/airtime/$time?sort=$sort"
-	$web $result ;;
     Url)
         txt="$(echo -e "" | dmenu -p "What do you want to go?" -i)"         		
 	$web https://$txt ;;

@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #sel=$(find ~/Documents -maxdepth 20 -type f | grep -Eo "Documents*.pdf" | dmenu -i -p Books: -l 23 -fn "Agave Nerd Font:size=16" $colors1  )
-sel=$(find ~/ownCloud/Documents -maxdepth 20 -type f | sed -r 's/\/.*\///'| dmenu -i -p Books: -l 23 )
-path=$(find ~/ownCloud/Documents -maxdepth 20 -type f | grep $sel)
+sel=$(find ~/Nextcloud/Documents -maxdepth 20 -type f | sed -r 's/\/.*\///'| dmenu -i -p Books: -l 23 )
+path=$(find ~/Nextcloud/Documents -maxdepth 20 -type f | grep $sel)
 
 if [ -z "$sel" ]
 then
