@@ -76,6 +76,7 @@
           "type": "field",
           "outboundTag": "direct",
           "domain": [
+            "wiki.archlinux.org",
             "mathscinet.ams.org",
             "projecteuclid.org",
             "localhost",

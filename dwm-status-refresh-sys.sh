@@ -20,7 +20,7 @@ print_backlight() {
 
 
 print_disk() {
-    disk=$(lsblk -f | grep sda4 | awk '{print $5}' | sed -r 's/G$//')
+    disk=$(lsblk -f | grep sda5 | awk '{print $5}' | sed -r 's/G$//')
     echo -e "${disk}G"
 }
 

@@ -13,7 +13,7 @@
 #     appearance-orange)
 #         feh --bg-scale ~/Pictures/orange.jpg ;;
 # esac
-feh --bg-fill ~/scripts/wallpapers/aenami_3.jpg
+feh --bg-fill ~/scripts/wallpapers/mapamundi-wallpaper.jpg
 
 sudo cpupower frequency-set --governor conservative 
 
