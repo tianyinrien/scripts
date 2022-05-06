@@ -6,10 +6,10 @@ then
 fi
 }
 
-web="$(echo -e "qutebrowser\nfirefox" | dmenu -p "Which Browser?" -l 20 -i)"
+#web="$(echo -e "qutebrowser\nfirefox" | dmenu -p "Which Browser?" -l 20 -i)"
 
-exit_justify "$web"
-#web="qutebrowser"
+#exit_justify "$web"
+web="qutebrowser"
 
 engine="$(echo -e "Google\nDuckDuckgo\narXiv\nWiki\nSci-Hub\nMath-Overflow\nGithub\nYoutube\nUrl\nCNU" | dmenu -p "Which Engine?" -l 20 -i)"
 

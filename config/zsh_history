@@ -1,0 +1,71 @@
+: 1650505500:0;ra
+: 1650505506:0;clear
+: 1650505515:0;man chsh
+: 1650505538:0;sudo chsh -s /bin/zsh root
+: 1650505541:0;exit
+: 1650505547:0;clear
+: 1650505548:0;ra
+: 1650505556:0;clear
+: 1650505562:0;vim
+: 1650505572:0;clar
+: 1650505574:0;clear
+: 1650505578:0;emacs
+: 1650505618:0;loadkeys i386/qwerty/emacs2.map.gz
+: 1650505630:0;vim .zshrc
+: 1650505735:0;exit
+: 1650505741:0;ke
+: 1650505746:0;clear
+: 1650505809:0;exit
+: 1650762029:0;sudo echo 300 > /sys/class/backlight/intel_backlight/brightness\
+
+: 1650762039:0;sudo echo 400 > /sys/class/backlight/intel_backlight/brightness\
+
+: 1650762063:0;sudo echo 300 > /sys/class/backlight/intel_backlight/brightness\
+
+: 1650762070:0;sudo echo 500 > /sys/class/backlight/intel_backlight/brightness\
+
+: 1650762073:0;clear
+: 1650762090:0;su ren
+: 1651730027:0;cp -r -t usb/ren .config .local .oh-my-zsh .ssh
+: 1651822491:0;sd
+: 1651822496:0;ls
+: 1651822498:0;la
+: 1651822503:0;ra
+: 1651822582:0;lsblk
+: 1651822587:0;ke
+: 1651822602:0;exit
+: 1651824988:0;ra
+: 1651825002:0;man nextcloudcmd
+: 1651825070:0;exit
+: 1651841374:0;chown .zshrc
+: 1651841382:0;sudo chown .zshrc
+: 1651841394:1;sudo chown ren .zshrc
+: 1651841401:0;sudo chgrp ren .zshrc
+: 1651841404:5;ranger
+: 1651841422:0;sudo chgrp ren .zsh_history
+: 1651841429:0;sudo chown ren .zsh_history 
+: 1651841433:0;ne
+: 1651841435:0;ra
+: 1651841520:0;vv
+: 1651841546:0;ih
+: 1651841656:0;alsamixer
+: 1651842142:0;ssh root@tianyinmath.xyz -p 26199
+: 1651842717:0;ra
+: 1651843161:0;unzip ren.zip
+: 1651843165:0;ra
+: 1651843369:0;xm
+: 1651843377:0;unzip ssh.zip
+: 1651843384:0;ra
+: 1651843411:0;ssh root@tianyinmath.xyz -p 26199
+: 1651843568:0;ra
+: 1651843589:0;vim
+: 1651843664:0;lsblk
+: 1651843760:0;ra
+: 1651851039:0;sd
+: 1651851045:0;clear
+: 1651851055:0;ra
+: 1651851136:0;vim
+: 1651851347:0;ra
+: 1651851426:0;mu
+: 1651851462:0;psy
+: 1651852439:0;ra

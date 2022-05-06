@@ -1,0 +1,7 @@
+[user]
+	email = tianyin.rien@gmail.com
+	name = tianyinrien
+[credential]
+	helper = store
+[http]
+	proxy = http://127.0.0.1:1087
